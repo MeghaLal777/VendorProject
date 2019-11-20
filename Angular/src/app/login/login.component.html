@@ -1,0 +1,42 @@
+
+  <div  style="background-color: rgb(92, 90, 90);min-height:100vh;width: 100%;">
+    <br>
+  <div class="w3layouts-main" style="border:2px solid black;width:30%;height:30%;margin-left:35%;margin-top:12%;background-color: white">
+    <br>
+    <div class="bg-layer" style="margin-left:5%;width:90%;height:90%;">
+      <h1 align="center"> Login </h1>
+      <br>
+      <div class="header-main">
+        <div class="main-icon">
+          <span class="fa fa-eercast"></span>
+        </div>
+        <div class="header-left-bottom">
+          <form role="form" #form="ngForm" autocomplete="off" (submit)="OnSubmit(form)">
+            <div class="icon1">
+              <input name="username" type="text" class="form-control" placeholder="Enter User Name" #username="ngModel"
+                [(ngModel)]="_authservice.formData.username" required>
+              <br>
+              <div class="validation-error" *ngIf="username.invalid && username.touched"
+                style="color: red;font-size: 15px;"><b>*Username is required</b></div>
+  
+            </div>
+            <div class="icon1">
+              <input name="password" type="password" class="form-control" placeholder="Enter Password" #password="ngModel"
+                [(ngModel)]="_authservice.formData.password" required>
+              <br>
+              <div class="validation-error" *ngIf="password.invalid && password.touched"
+                style="color: red;font-size: 15px;"><b>*Password is required</b></div>
+  
+            </div>
+            <br>
+  
+            <div class="input">
+              <input type="submit" value="Login" [disabled]="form.invalid" class="btn btn-info btn-block" style="background-color: rgb(8, 50, 129)">
+              <br> <b><span
+                  style="color: blanchedalmond;font-style:Arial Black, Gadget, sans-serif;font-size: 20,l  px;">{{message}}</span></b>
+            </div>
+          </form>
+        </div>
+  
+      </div>
+    </div>
